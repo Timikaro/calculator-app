@@ -45,13 +45,16 @@ namespace ConsoleApplication1
         {
             return a * b;
         }
-        static int Pembagian(int a, int b)
+        static float Pembagian(float a, float b)
         {
             return a / b;
         }
+     
+
+
         static void Main(string[] args)
         {
-
+            Menu:
             Console.Title = "Kalkulator";
             Console.WriteLine("Pilih Menu Kalkulator");
             Console.WriteLine("1. Penambahan");
@@ -59,60 +62,138 @@ namespace ConsoleApplication1
             Console.WriteLine("3. Perkalian");
             Console.WriteLine("4. Pembagian");
             Console.Write("Masukan Nomor Menu[1...4]:");
-            int pilih_menu = int.Parse(Console.ReadLine());
+            int pilihan_menu = int.Parse(Console.ReadLine());
 
 
-            if (pilih_menu == 1)
+            if (pilihan_menu == 1)
             {
+            penambahan:
                 Console.Clear();
-                Menu(pilih_menu);
+                Menu(pilihan_menu);
                 Console.Write("Masukan nilai a = ");
                 int a = int.Parse(Console.ReadLine());
                 Console.Write("Masukan nilai b = ");
                 int b = Convert.ToInt32(Console.ReadLine());
-                Console.Write("Hasil Penambahan " + a + " + " + b + " = " + Penambahan(a, b));
-                
+                Console.WriteLine("Hasil Penambahan " + a + " + " + b + " = " + Penambahan(a, b));
+                Console.WriteLine("1. Ulangi?");
+                Console.WriteLine("2. Kembali ke menu utama?");
+                Console.WriteLine("3. Keluar Program");
+                Console.Write("Pilihan( inputkan dalam bentuk angka ) = ");
+                string ulang = Console.ReadLine();
+                if (ulang == "1")
+                {
+                    Console.Clear();
+                    goto penambahan;
+                }
+                else if (ulang == "2")
+                {
+                    Console.Clear();
+                    goto Menu;
+                }
+                else
+                {
+                    goto exit;
+                }
+
             }
-            else if (pilih_menu == 2)
+            else if (pilihan_menu == 2)
             {
+            pengurangan:
                 Console.Clear();
-                Menu(pilih_menu);
+                Menu(pilihan_menu);
                 Console.Write("Masukan nilai a = ");
                 int a = int.Parse(Console.ReadLine());
                 Console.Write("Masukan nilai b = ");
                 int b = Convert.ToInt32(Console.ReadLine());
-
-                Console.Write("Hasil Penambahan " + a + " - " + b + " = " + Pengurangan(a, b));
+                Console.WriteLine("Hasil Pengurangan " + a + " - " + b + " = " + Pengurangan(a, b));
+                Console.WriteLine("1. Ulangi?");
+                Console.WriteLine("2. Kembali ke menu utama?");
+                Console.WriteLine("3. Keluar Program");
+                Console.Write("Pilihan( inputkan dalam bentuk angka ) = ");
+                string ulang = Console.ReadLine();
+                if (ulang == "1")
+                {
+                    Console.Clear();
+                    goto pengurangan;
+                }
+                else if (ulang == "2")
+                {
+                    Console.Clear();
+                    goto Menu;
+                }
+                else
+                {
+                    goto exit;
+                }
             }
-            else if (pilih_menu == 3)
+            else if (pilihan_menu == 3)
             {
+            perkalian:
                 Console.Clear();
-                Menu(pilih_menu);
+                Menu(pilihan_menu);
                 Console.Write("Masukan nilai a = ");
                 int a = int.Parse(Console.ReadLine());
                 Console.Write("Masukan nilai b = ");
                 int b = Convert.ToInt32(Console.ReadLine());
-
-                Console.WriteLine("Hasil Penambahan " + a + " * " + b + " = " + Perkalian(a, b));
+                Console.WriteLine("Hasil Perkalian " + a + " * " + b + " = " + Perkalian(a, b));
+                Console.WriteLine("1. Ulangi?");
+                Console.WriteLine("2. Kembali ke menu utama?");
+                Console.WriteLine("3. Keluar Program");
+                Console.Write("Pilihan( inputkan dalam bentuk angka ) = ");
+                string ulang = Console.ReadLine();
+                if (ulang == "1")
+                {
+                    Console.Clear();
+                    goto perkalian;
+                }
+                else if (ulang == "2")
+                {
+                    Console.Clear();
+                    goto Menu;
+                }
+                else
+                {
+                    goto exit;
+                }
             }
-            else if (pilih_menu == 4)
+            else if (pilihan_menu == 4)
             {
+                pembagian:
                 Console.Clear();
-                Menu(pilih_menu);
+                Menu(pilihan_menu);
                 Console.Write("Masukan nilai a = ");
                 int a = int.Parse(Console.ReadLine());
                 Console.Write("Masukan nilai b = ");
                 int b = Convert.ToInt32(Console.ReadLine());
-
-                Console.Write("Hasil Penambahan " + a + " / " + b + " = " + Pembagian(a, b));
+                Console.WriteLine("Hasil Pembagian " + a + " / " + b + " = " + Pembagian(a, b));
+                Console.WriteLine("1. Ulangi?");
+                Console.WriteLine("2. Kembali ke menu utama?");
+                Console.WriteLine("3. Keluar Program");
+                Console.Write("Pilihan( inputkan dalam bentuk angka ) = ");
+                string ulang = Console.ReadLine();
+                if (ulang == "1")
+                {
+                    Console.Clear();
+                    goto pembagian;
+                }
+                else if (ulang == "2")
+                {
+                    Console.Clear();
+                    goto Menu;
+                }
+                else
+                {
+                    goto exit;
+                }
             }
             else
             {
                 Console.Write("Maaf, menu yang Anda pilih tidak tersedia");
             }
-
+            exit:
             Console.WriteLine("\n Tekan sembarang untuk keluar");
             Console.ReadKey();
         }
     }
+
 }
